@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sport: MyString
+  game_size: 1
+  admin_id: 1
+  when: 
+
+two:
+  sport: MyString
+  game_size: 1
+  admin_id: 1
+  when: 
