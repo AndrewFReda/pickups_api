@@ -3,9 +3,9 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
       t.string :sport
       t.string :location
-      t.integer :game_size
+      t.integer :num_players
       t.integer :admin_id
-      t.datetime :when
+      t.integer :when
 
       t.timestamps
     end
