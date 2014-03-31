@@ -6,6 +6,6 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: twitgram_development
+  database: pickups_api_development
   pool: 5
   password:

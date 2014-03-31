@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140330171659) do
   create_table "games", force: true do |t|
     t.string   "sport"
     t.string   "location"
+    t.string   "location_name"
     t.integer  "num_players"
     t.integer  "admin_id"
     t.integer  "when"
@@ -37,15 +38,6 @@ ActiveRecord::Schema.define(version: 20140330171659) do
     t.string   "name"
     t.string   "skill"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "twits", force: true do |t|
-    t.string   "instagram_key"
-    t.string   "twitter_key"
-    t.string   "twitter_text"
-    t.string   "s3_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
