@@ -5,6 +5,6 @@ PickupsApi::Application.routes.draw do
   scope path: 'pickups' do
     resources :games
     resources :players
-  #   resources :users
+    resources :users
   end
 end
