@@ -6,8 +6,11 @@ class ApplicationController < ActionController::Base
 
   respond_to :json
 
-  private
+  def render_error(message, status = 400)
+    render json: { error: "#{message}" }.to_json, status: status
+  end
 
+  private
     def default_json_format
       request.format = 'json' unless params[:format]
     end

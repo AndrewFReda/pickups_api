@@ -13,7 +13,7 @@ class GamesController < ApplicationController
     if @game.save
       render 'show'
     else
-      render json: { error: 'Could not create game.' }.to_json, status: 400
+      render_error 'Could not create game.'
     end
   end
 
@@ -22,16 +22,16 @@ class GamesController < ApplicationController
     if @game.update
       render 'show'
     else
-      render json: { error: 'Could not update game.' }.to_json, status: 400
+      render_error 'Could not update game.'
     end
   end
 
   def destroy
     @game = Game.find params[:id] # game_params
     if @game.destroy
-      render status: 200
+      render nothing: true, status: 200
     else
-      render json: { error: 'Could not delete game.' }.to_json, status: 400
+      render_error 'Could not delete game.'
     end
   end
 

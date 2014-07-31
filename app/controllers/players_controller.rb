@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
 
-  def index 
+  def index
     @players = Player.all
   end
 
@@ -13,7 +13,7 @@ class PlayersController < ApplicationController
     if @player.save
       render 'show'
     else
-      render json: { error: 'Could not create player.' }.to_json, status: 400
+      render_error 'Could not create player.'
     end
   end
 
@@ -22,16 +22,16 @@ class PlayersController < ApplicationController
     if @player.update
       render 'show'
     else
-      render json: { error: 'Could not update player.' }.to_json, status: 400
+      render_error 'Could not update player.'
     end
   end
 
   def destroy
     @player = Player.find params[:id]
     if @player.destroy
-      render status: 200
+      render nothing: true, status: 200
     else
-      render json: { error: 'Could not delete player.' }.to_json, status: 400
+      render_error 'Could not delete player.'
     end
   end
 
